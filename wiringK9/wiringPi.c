@@ -1199,7 +1199,7 @@ int isS500(void)
         printf ("piboardRev: Hardware string: %s\n", line) ;
     }
 
-    if (strstr(line, "gs705a") != NULL)
+    if (strstr(line, "gs705a") != NULL || strstr(line, "labrador") != NULL)
     {
         if (wiringPiDebug)
             printf ("Hardware:%s\n", line) ;
@@ -3432,8 +3432,8 @@ int wiringPiSetup (void)
 
         // The drive pads
         pads = (uint32_t *)mmap(0, BLOCK_SIZE, PROT_READ | PROT_WRITE, MAP_SHARED, fd, S500_GPIO_PADS) ;
-        if ((int32_t)pads == -1)
-            return wiringPiFailure (WPI_ALMOST, "wiringPiSetup: mmap (PADS) failed: %s\n", strerror (errno)) ;
+//        if ((int32_t)pads == -1)
+//            return wiringPiFailure (WPI_ALMOST, "wiringPiSetup: mmap (PADS) failed: %s\n", strerror (errno)) ;
 
 #ifdef	USE_TIMER
         // The system timer
