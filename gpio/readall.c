@@ -238,6 +238,19 @@ void cmReadall (void)
     printf ("+-----+------+-------+      +-----+------+-------+\n") ;
 }
 
+void LabradorReadAll(void)
+{
+  int pin ;
+
+  printf (" +-----+-----+---------+------+---+---Labrador---+------+---------+-----+-----+\n") ;
+  printf (" | BCM | wPi |   Name  | Mode | V | Physical | V | Mode |  Name   | wPi | BCM |\n") ;
+  printf (" +-----+-----+---------+------+---+----++----+---+------+---------+-----+-----+\n") ;
+  for (pin = 1 ; pin <= 40 ; pin += 2)
+    readallPhys (pin) ;
+  printf (" +-----+-----+---------+------+---+----++----+---+------+---------+-----+-----+\n") ;
+  printf (" | BCM | wPi |   Name  | Mode | V | Physical | V | Mode |  Name   | wPi | BCM |\n") ;
+  printf (" +-----+-----+---------+------+---+---Labrador---+------+---------+-----+-----+\n") ;	
+}
 
 /*
  * abReadall:
@@ -314,6 +327,8 @@ void doReadall (void)
         bPlusReadall () ;
     else if (model == PI_MODEL_CM)
         cmReadall () ;
+    else if (model == PI_MODEL_BPR)
+        LabradorReadAll () ;
     else
         printf ("Oops - unable to determine board type... model: %d\n", model) ;
 }
