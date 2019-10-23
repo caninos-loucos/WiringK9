@@ -2,6 +2,8 @@
 WiringPI compatible usermode GPIO driver for Caninos Labrador boards.
 It is based on the original [WiringPi for Raspberry Pi created by Drogon](http://wiringpi.com/).
 
+Currently working with Labrador 32-bit.
+
 ## Download
     git clone https://github.com/caninos-loucos/WiringK9.git
 
